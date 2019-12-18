@@ -1,5 +1,4 @@
 // Libraries
-import Vue from 'vue';
 import Vuetify from 'vuetify';
 
 // Components
@@ -12,7 +11,6 @@ import CustomCard from '@/components/CustomCard';
 // Utilities
 
 const localVue = createLocalVue();
-Vue.use(Vuetify); // mine
 
 describe('CustomCard.vue', () => {
   let vuetify;
@@ -44,6 +42,9 @@ describe('CustomCard.vue', () => {
     const wrapper = mount(CustomCard, {
       localVue,
       vuetify,
+      propsData: {
+        title: 'Foobar',
+      },
     });
 
     const event = jest.fn();
